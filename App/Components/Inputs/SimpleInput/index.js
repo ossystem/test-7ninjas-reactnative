@@ -7,6 +7,15 @@ import styles from './styles'
 
 export default class SimpleInput extends Component{
 
+  static propTypes = {
+    onChangeText: PropTypes.func.isRequired,
+    value: PropTypes.string
+  }
+
+  static defaultProps = {
+    value: '',
+  }
+
   onChangeText = (val) => {
     this.props.onChange(val)
   }

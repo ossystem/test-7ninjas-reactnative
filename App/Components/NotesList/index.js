@@ -4,6 +4,14 @@ import { ListView, Text } from 'react-native'
 
 export default class NotesList extends Component {
 
+  static propTypes = {
+    list: PropTypes.arrayOf(PropTypes.string),
+  }
+
+  static defaultProps = {
+    list: [],
+  }
+
   prepareList = (list) => {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return ds.cloneWithRows(list);

@@ -10,7 +10,11 @@ import { SimpleInput } from '../../Components/Inputs'
 import styles from './styles'
 
 export default class AddNoteScreen extends Component {
-  
+
+  static propTypes = {}
+
+  static defaultProps = {}
+
   onNoteAdding = () => {
     const { freshNote, onNoteAdding } = this.props
     onNoteAdding(freshNote)
@@ -32,7 +36,6 @@ export default class AddNoteScreen extends Component {
           <View style={styles.centered}>
             <Image source={Images.launch} style={styles.logo} />
           </View>
-
           <View style={styles.section}>
             <SimpleInput 
               onChange={onNoteTyping}

@@ -5,7 +5,7 @@ import styles from './styles'
 
 export default class RoundedButton extends Component {
   static propTypes = {
-    onPress: PropTypes.func,
+    onPress: PropTypes.func.isRequired,
     text: PropTypes.string,
   }
 
