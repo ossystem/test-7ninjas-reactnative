@@ -1,15 +1,17 @@
 import { StackNavigator } from 'react-navigation'
-import LaunchScreen from '../Containers/LaunchScreen'
+import AddNoteScreen from '../Containers/AddNoteContainer'
+import NotesListScreen from '../Containers/NotesListContainer'
 
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
-  LaunchScreen: { screen: LaunchScreen }
+  AddNoteScreen: { screen: AddNoteScreen },
+  NotesListScreen: { screen: NotesListScreen }
 }, {
   // Default config for all screens
   headerMode: 'none',
-  initialRouteName: 'LaunchScreen',
+  initialRouteName: 'AddNoteScreen',
   navigationOptions: {
     headerStyle: styles.header
   }
