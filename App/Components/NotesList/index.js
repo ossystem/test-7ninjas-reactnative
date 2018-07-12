@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
-import { ListView, Text } from 'react-native'
+import PropTypes from 'prop-types'
+import { FlatList, Text } from 'react-native'
+
+import NoteCard from '../Card'
+
+import { styles } from './styles'
 
 export default class NotesList extends Component {
 
@@ -12,16 +16,21 @@ export default class NotesList extends Component {
     list: [],
   }
 
-  prepareList = (list) => {
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    return ds.cloneWithRows(list);
+  renderNoteCard = (rowData) => {
+    console.log('Row Item DATA', rowData);
+    return (
+      <NoteCard
+        text={rowData.item}
+      />
+    );
   }
 
   render() {
     return (
-      <ListView
-        dataSource={this.prepareList(this.props.list)}
-        renderRow={(rowData) => <Text>{rowData}</Text>}
+      <FlatList
+        style={styles.container}
+        data={this.props.list}
+        renderItem={this.renderNoteCard}
       />
     );
   }

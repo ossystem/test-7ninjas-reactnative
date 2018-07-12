@@ -10,13 +10,13 @@ export const reducers = combineReducers({
   nav: require('./NavigationRedux').reducer,
   github: require('./GithubRedux').reducer,
   search: require('./SearchRedux').reducer,
-  notes: noteReducer,
+  myNotes: require('./NotesReducer').reducer,
 })
 
 export default () => {
   let finalReducers = reducers
-  // If rehydration is on use persistReducer otherwise default combineReducers
-  if (ReduxPersist.active) {
+  //If rehydration is on use persistReducer otherwise default combineReducers
+  if (ReduxPersist.active || true) {
     const persistConfig = ReduxPersist.storeConfig
     finalReducers = persistReducer(persistConfig, reducers)
   }

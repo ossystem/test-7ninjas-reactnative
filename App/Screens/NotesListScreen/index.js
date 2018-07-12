@@ -18,7 +18,7 @@ export default class NotesListScreen extends Component {
       <View style={styles.mainContainer}>
         <ScrollView style={styles.container}>
           <NotesList 
-            list={this.props.notes}
+            list={this.props.myNotes}
           />
         </ScrollView>
       </View>

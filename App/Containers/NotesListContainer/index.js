@@ -6,7 +6,7 @@ const { onNoteAdding, onNoteTyping } = noteActions
 
 export default connect(
   (store) => ({
-    notes: store.notes.notes,
+    myNotes: store.myNotes.notes,
   }), 
   (dispatch) => ({
     
