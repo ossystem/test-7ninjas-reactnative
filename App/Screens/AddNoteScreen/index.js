@@ -41,14 +41,16 @@ export default class AddNoteScreen extends Component {
               onChange={onNoteTyping}
               value={freshNote}
             />
-            <RoudedButton
-              onPress={this.onNoteAdding}
-              text="Save Note"
-            />
           </View>
+          <RoudedButton
+            onPress={this.onNoteAdding}
+            text="Save Note"
+            style={styles.save}
+          />
           <RoudedButton
             onPress={this.showNotes}
             text="Show Notes"
+            style={styles.navigateTo}
           />
         </ScrollView>
       </View>

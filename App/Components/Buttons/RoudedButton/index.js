@@ -15,9 +15,10 @@ export default class RoundedButton extends Component {
   }
 
   render () {
+    const { style } = this.props;
     return (
       <TouchableOpacity 
-        style={styles.button} 
+        style={[styles.button, style?style:{}]} 
         onPress={this.props.onPress}
       >
         <Text style={styles.buttonText}>{this.getText()}</Text>

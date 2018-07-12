@@ -10,6 +10,7 @@ export default class NotesList extends Component {
 
   static propTypes = {
     list: PropTypes.arrayOf(PropTypes.string),
+    showDetails: PropTypes.func,
   }
 
   static defaultProps = {
@@ -20,6 +21,7 @@ export default class NotesList extends Component {
     console.log('Row Item DATA', rowData);
     return (
       <NoteCard
+        showDetails={this.props.showDetails}
         text={rowData.item}
       />
     );

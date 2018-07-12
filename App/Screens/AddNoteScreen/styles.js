@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
-import { Metrics, ApplicationStyles } from '../../Themes/'
+import { Metrics, ApplicationStyles, Colors } from '../../Themes/'
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
-    paddingBottom: Metrics.baseMargin
+    paddingBottom: Metrics.baseMargin,
   },
   logo: {
     marginTop: Metrics.doubleSection,
@@ -14,5 +14,19 @@ export default StyleSheet.create({
   },
   centered: {
     alignItems: 'center'
+  },
+  navigateTo: {
+    width: 200,
+    // position: 'absolute',
+    // bottom: 50,
+    // right: 50,
+    backgroundColor: Colors.facebook,
+  },
+  save: {
+    width: 200,
+    // position: 'absolute',
+    // bottom: 50,
+    // right: 50,
+    backgroundColor: Colors.ricePaper,
   }
 })

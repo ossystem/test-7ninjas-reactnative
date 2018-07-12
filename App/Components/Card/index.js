@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
 import PropTypes from 'prop-types'
 
-import styles from './styles';
+import styles from './styles'
 
 export default class NoteCard extends Component{
   static defaultProps = {
@@ -19,6 +19,7 @@ export default class NoteCard extends Component{
   }
 
   static propTypes = {
+    showDetails: PropTypes.func.isRequired,
     noteTitle: PropTypes.string,
     noteSubtitle: PropTypes.string,
     text: PropTypes.string,
@@ -34,10 +35,10 @@ export default class NoteCard extends Component{
     let buttons = null;
     if (actions.length) {
       buttons = actions.map((action) => {
-        const { onPress, title, color } = action;
+        const { onPress, title, color } = action
         return (
           <CardButton
-            onPress={onPress}
+            onPress={this.onShowDetails}
             title={title}
             color={color}
           />
@@ -48,7 +49,7 @@ export default class NoteCard extends Component{
   }
 
   renderTitle = () => {
-    const { title, subtitle } = this.props;
+    const { title, subtitle } = this.props
     let cardTitle = null;
     return (
       <CardTitle 
@@ -56,10 +57,15 @@ export default class NoteCard extends Component{
         subtitle={subtitle || ''}
       />
     );
-  } 
+  }
+
+  onShowDetails = () => {
+    const { showDetails, text } = this.props
+    showDetails(text)
+  }
 
   render() {
-    const { text } = this.props;
+    const { text } = this.props
     return (
       <Card
         style={styles.card}
